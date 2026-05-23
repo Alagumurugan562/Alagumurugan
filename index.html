@@ -2,13 +2,12 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Alagu Murugan Pyro World</title>
+<title>AlaguMurugan Pyro World</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Cinzel:wght@400;600;800&display=swap" rel="stylesheet">
 
 <style>
 
@@ -19,587 +18,210 @@
 }
 
 body{
-
     overflow:hidden;
-
-    background:black;
-
-    font-family:'Poppins',sans-serif;
-
+    font-family:'Cinzel', serif;
     color:white;
 
-    position:relative;
+    /* DARK PREMIUM BACKGROUND */
+    background: radial-gradient(circle at top,
+    #1a0033,
+    #000000 60%,
+    #000000);
 }
 
-/* VIDEO BACKGROUND */
-
-.bg-video{
-
-    position:fixed;
-
-    top:0;
-    left:0;
-
-    width:100%;
-    height:100%;
-
-    z-index:-5;
-}
-
-.bg-video video{
-
-    width:100%;
-    height:100%;
-
-    object-fit:cover;
-
-    filter:brightness(0.45);
-}
-
-/* COLORFUL OVERLAY */
-
+/* SKY DARK GLOW */
 .overlay{
-
     position:fixed;
-
-    top:0;
-    left:0;
-
     width:100%;
     height:100%;
+    z-index:-3;
 
     background:
-
-    radial-gradient(circle at top left,
-    rgba(255,0,102,0.35),
-    transparent 30%),
-
-    radial-gradient(circle at top right,
-    rgba(0,204,255,0.30),
-    transparent 30%),
-
-    radial-gradient(circle at bottom left,
-    rgba(255,204,0,0.30),
-    transparent 30%),
-
-    radial-gradient(circle at bottom right,
-    rgba(0,255,128,0.25),
-    transparent 30%),
-
-    radial-gradient(circle at center,
-    rgba(255,102,0,0.20),
-    rgba(0,0,0,0.88));
-
-    animation:colorMove 10s ease-in-out infinite alternate;
-
-    z-index:-4;
+    radial-gradient(circle at top left, rgba(255,0,150,0.25), transparent 40%),
+    radial-gradient(circle at top right, rgba(0,200,255,0.20), transparent 40%),
+    radial-gradient(circle at bottom, rgba(255,255,0,0.10), transparent 60%);
 }
 
-@keyframes colorMove{
-
-    0%{
-        filter:hue-rotate(0deg);
-    }
-
-    100%{
-        filter:hue-rotate(40deg);
-    }
-}
-
-/* SKYSHOTS */
-
+/* SKYSHOTS (ROCKET STYLE) */
 .skyshots{
-
     position:fixed;
-
     width:100%;
     height:100%;
-
-    top:0;
-    left:0;
-
-    overflow:hidden;
-
-    z-index:-3;
+    z-index:-2;
 }
 
 .skyshots span{
-
     position:absolute;
-
-    bottom:-250px;
-
-    width:5px;
-
-    height:220px;
-
+    bottom:-200px;
+    width:3px;
+    height:180px;
     border-radius:50px;
 
-    background:
-    linear-gradient(
-    to top,
-    rgba(255,255,255,0),
-    #ff00cc,
-    #00ccff,
+    background: linear-gradient(to top,
+    transparent,
+    #ff004c,
     #ffcc00,
-    #ff3300,
+    #00e5ff,
     white);
 
-    box-shadow:
-    0 0 20px #ff6600,
-    0 0 40px #ff3300,
-    0 0 80px red;
+    box-shadow:0 0 20px #ff004c,0 0 40px #00e5ff;
 
-    animation:skyshot 6s linear infinite;
+    animation:rocket 4s linear infinite;
 }
 
-.skyshots span:nth-child(1){
-    left:10%;
-    animation-delay:0s;
-}
+.skyshots span:nth-child(1){left:10%; animation-delay:0s;}
+.skyshots span:nth-child(2){left:25%; animation-delay:1s;}
+.skyshots span:nth-child(3){left:45%; animation-delay:0.5s;}
+.skyshots span:nth-child(4){left:65%; animation-delay:1.5s;}
+.skyshots span:nth-child(5){left:85%; animation-delay:2s;}
 
-.skyshots span:nth-child(2){
-    left:25%;
-    animation-delay:2s;
-}
-
-.skyshots span:nth-child(3){
-    left:45%;
-    animation-delay:1s;
-}
-
-.skyshots span:nth-child(4){
-    left:65%;
-    animation-delay:3s;
-}
-
-.skyshots span:nth-child(5){
-    left:85%;
-    animation-delay:4s;
-}
-
-@keyframes skyshot{
-
+@keyframes rocket{
     0%{
-        transform:translateY(0);
+        transform:translateY(0) scaleY(1);
         opacity:1;
     }
-
     100%{
-        transform:translateY(-140vh);
-        opacity:0;
-    }
-}
-
-/* FIREWORK BLASTS */
-
-.blast{
-
-    position:absolute;
-
-    width:12px;
-    height:12px;
-
-    border-radius:50%;
-
-    background:
-    radial-gradient(circle,
-    #ffcc00,
-    #ff3300,
-    #ff00cc);
-
-    box-shadow:
-    0 0 10px #ffcc00,
-    0 0 20px #ff6600,
-    0 0 40px #ff3300,
-    0 0 80px red;
-
-    animation:blast 4s infinite;
-}
-
-.blast:nth-child(1){
-    top:20%;
-    left:15%;
-    animation-delay:0s;
-}
-
-.blast:nth-child(2){
-    top:35%;
-    left:75%;
-    animation-delay:1s;
-}
-
-.blast:nth-child(3){
-    top:70%;
-    left:30%;
-    animation-delay:2s;
-}
-
-.blast:nth-child(4){
-    top:18%;
-    left:90%;
-    animation-delay:3s;
-}
-
-.blast:nth-child(5){
-    top:60%;
-    left:55%;
-    animation-delay:1.5s;
-}
-
-@keyframes blast{
-
-    0%{
-        transform:scale(0);
-        opacity:1;
-    }
-
-    70%{
-        transform:scale(12);
-        opacity:0.8;
-    }
-
-    100%{
-        transform:scale(18);
+        transform:translateY(-160vh) scaleY(1.3);
         opacity:0;
     }
 }
 
 /* HERO */
-
 .hero{
-
-    width:100%;
     height:100vh;
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
     text-align:center;
-
-    padding:20px;
 }
-
-/* CONTENT */
 
 .content{
-
-    max-width:1000px;
-
-    animation:fadeIn 2s ease;
+    max-width:900px;
 }
 
-/* SHOP NAME */
-
+/* UNIQUE TITLE */
 .content h1{
-
     font-family:'Orbitron',sans-serif;
+    font-size:80px;
+    font-weight:900;
 
-    font-size:95px;
+    background: linear-gradient(45deg,#ffcc00,#ff004c,#00e5ff,#ffcc00);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
 
-    line-height:1.1;
+    animation:glow 2s infinite alternate;
 
-    text-transform:uppercase;
-
-    letter-spacing:5px;
-
-    color:#ffcc00;
-
-    animation:glow 2s ease-in-out infinite alternate;
-
-    text-shadow:
-    0 0 10px #ffcc00,
-    0 0 20px #ff9900,
-    0 0 40px #ff6600,
-    0 0 80px #ff3300,
-    0 0 120px red;
+    text-shadow:0 0 25px rgba(255,255,255,0.2);
 }
 
 @keyframes glow{
-
     from{
-
-        text-shadow:
-        0 0 10px #ffcc00,
-        0 0 20px #ff9900,
-        0 0 40px #ff6600;
+        filter:drop-shadow(0 0 10px #ff004c);
     }
-
     to{
-
-        text-shadow:
-        0 0 20px #fff,
-        0 0 40px #ffcc00,
-        0 0 80px #ff6600,
-        0 0 120px red;
+        filter:drop-shadow(0 0 30px #00e5ff);
     }
 }
 
-/* GLOW LINE */
-
+/* LINE */
 .line{
-
     width:300px;
-
-    height:5px;
-
-    margin:35px auto;
-
+    height:4px;
+    margin:25px auto;
     border-radius:50px;
-
-    background:
-    linear-gradient(
-    to right,
-    transparent,
-    #ffcc00,
-    #ff3300,
-    transparent);
-
-    box-shadow:
-    0 0 25px orange;
+    background:linear-gradient(to right,#ff004c,#ffcc00,#00e5ff);
+    box-shadow:0 0 20px #ff004c;
 }
 
-/* SUBTEXT */
-
+/* TEXT */
 .content p{
-
-    font-size:24px;
-
-    line-height:1.9;
-
-    color:#f5f5f5;
+    font-size:20px;
+    line-height:1.8;
+    color:#e6e6e6;
 }
 
-/* WHATSAPP BUTTON */
-
+/* BUTTON */
 .whatsapp{
-
-    display:inline-block;
-
-    margin-top:45px;
-
-    padding:20px 55px;
-
-    border-radius:70px;
-
-    background:#25D366;
-
-    color:white;
-
-    text-decoration:none;
-
-    font-size:24px;
-
-    font-weight:600;
-
+    margin-top:40px;
+    padding:18px 50px;
+    border-radius:50px;
     border:none;
-
+    background:linear-gradient(45deg,#25D366,#00e5ff);
+    color:white;
+    font-size:22px;
     cursor:pointer;
-
-    box-shadow:
-    0 0 20px rgba(37,211,102,0.5),
-    0 0 40px rgba(37,211,102,0.4);
-
-    transition:0.4s;
+    box-shadow:0 0 25px #25D366;
+    transition:0.3s;
 }
 
 .whatsapp:hover{
-
     transform:scale(1.1);
-
-    box-shadow:
-    0 0 35px rgba(37,211,102,1),
-    0 0 70px rgba(37,211,102,0.8);
-}
-
-/* CLICK BLAST EFFECT */
-
-.click-blast{
-
-    position:fixed;
-
-    width:20px;
-    height:20px;
-
-    border-radius:50%;
-
-    background:#ffcc00;
-
-    pointer-events:none;
-
-    transform:translate(-50%,-50%);
-
-    animation:clickBlast 1s ease-out forwards;
-
-    z-index:9999;
-}
-
-@keyframes clickBlast{
-
-    0%{
-        transform:translate(-50%,-50%) scale(0);
-        opacity:1;
-    }
-
-    100%{
-        transform:translate(-50%,-50%) scale(25);
-        opacity:0;
-    }
-}
-
-/* FADE */
-
-@keyframes fadeIn{
-
-    from{
-        opacity:0;
-        transform:translateY(40px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
+    box-shadow:0 0 50px #00e5ff;
 }
 
 /* MOBILE */
-
 @media(max-width:768px){
-
-    .content h1{
-        font-size:48px;
-    }
-
-    .content p{
-        font-size:18px;
-    }
-
-    .whatsapp{
-        font-size:18px;
-        padding:16px 35px;
-    }
-
-    .line{
-        width:180px;
-    }
+    .content h1{font-size:42px;}
+    .content p{font-size:16px;}
 }
 
 </style>
-
 </head>
 
 <body>
 
-<!-- BACKGROUND VIDEO -->
-
-<div class="bg-video">
-
-<video autoplay muted loop playsinline>
-
-<source src="https://cdn.coverr.co/videos/coverr-fireworks-over-the-city-1561756303127?download=1080p" type="video/mp4">
-
-</video>
-
-</div>
-
-<!-- OVERLAY -->
-
 <div class="overlay"></div>
 
-<!-- SKYSHOTS -->
-
+<!-- SKY ROCKETS -->
 <div class="skyshots">
-
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-
+<span></span><span></span><span></span><span></span><span></span>
 </div>
-
-<!-- FIREWORK BLASTS -->
-
-<div class="blast"></div>
-<div class="blast"></div>
-<div class="blast"></div>
-<div class="blast"></div>
-<div class="blast"></div>
-
-<!-- HERO -->
 
 <section class="hero">
 
-    <div class="content">
+<div class="content">
 
-        <h1>
+<h1>🔥 ALAGUMURUGAN<br>PYRO WORLD 🔥</h1>
 
-            🔥 ALAGU MURUGAN <br>
-            PYRO WORLD 🔥
+<div class="line"></div>
 
-        </h1>
+<p>
+Premium Sivakasi Crackers <br>
+Wholesale & Retail Available <br>
+Festival Offers • Safe Delivery • Best Price
+</p>
 
-        <div class="line"></div>
+<button class="whatsapp" onclick="openWhatsApp(event)">
+📲 Order On WhatsApp
+</button>
 
-        <p>
-
-            Premium Sivakasi Crackers <br>
-
-            Wholesale & Retail Available <br>
-
-            Festival Offers • Safe Delivery • Best Price
-
-        </p>
-
-        <!-- WHATSAPP BUTTON -->
-
-        <button class="whatsapp"
-        onclick="openWhatsApp(event)">
-
-            📲 Order On WhatsApp
-
-        </button>
-
-    </div>
+</div>
 
 </section>
 
 <script>
-
-/* WHATSAPP BLAST EFFECT */
-
 function openWhatsApp(event){
 
-    let blast =
-    document.createElement("div");
+    let blast=document.createElement("div");
 
-    blast.classList.add("click-blast");
-
-    blast.style.left =
-    event.clientX + "px";
-
-    blast.style.top =
-    event.clientY + "px";
+    blast.style.position="fixed";
+    blast.style.left=event.clientX+"px";
+    blast.style.top=event.clientY+"px";
+    blast.style.width="15px";
+    blast.style.height="15px";
+    blast.style.borderRadius="50%";
+    blast.style.background="radial-gradient(circle,#ffcc00,#ff004c)";
+    blast.style.boxShadow="0 0 20px yellow";
+    blast.style.animation="fade 1s ease-out forwards";
 
     document.body.appendChild(blast);
 
-    setTimeout(() => {
-
+    setTimeout(()=>{
         blast.remove();
-
-        window.open(
-        "https://wa.me/919363705144",
-        "_blank"
-        );
-
-    },800);
+        window.open("https://wa.me/919363705144","_blank");
+    },600);
 }
-
 </script>
 
 </body>
-
 </html>
